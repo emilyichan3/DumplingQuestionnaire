@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+{% block main %}
+        <div id="wrapper">
+            <section class="main-content">
+                <h1>Recipe</h1>
+                <div class="image-container">
+                    <div class="food-image">
+                        <img src="/static/images/dumplings.jpg" alt="Dumplings">
+                    </div>
+                </div>
+
+                <table class="table data">
+                    <thead>
+                        <tr>
+                            <th scope="col">Ingredient</th>
+                            <th scope="col">Weight(g)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recipe-ingredients">
+                        <tr>
+                            <td>pork</td>
+                            <td>500g</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+{% endblock %}

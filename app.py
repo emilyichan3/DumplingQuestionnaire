@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 
+from database import questionnaire_datastore
 
 app = Flask(__name__)
 
@@ -16,9 +17,10 @@ def recipe():
     return render_template("recipe.html")
 
 
-@app.route("/questionnaire/<id>")
-def questionnaire(id):
-    return render_template("questionnaire.html")
+@app.route("/questionnaire")
+def questionnaire():
+    return render_template("questionnaire.html", questions=questionnaire_datastore)
+
 
 
 @app.route('/login', methods=['GET'])

@@ -79,7 +79,10 @@ form {
 .food-image img {
     width: 100%;
 }
-
+.question-section {
+    margin: 0;
+    padding: 5em 0;
+}
 
 @media (min-width: 767px) {
     #wrapper {

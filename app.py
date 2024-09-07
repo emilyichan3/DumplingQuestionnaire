@@ -16,6 +16,11 @@ def recipe():
     return render_template("recipe.html")
 
 
+@app.route("/questionnaire/<id>")
+def questionnaire(id):
+    return render_template("questionnaire.html")
+
+
 @app.route('/login', methods=['GET'])
 def login():
     """Login page for the app.

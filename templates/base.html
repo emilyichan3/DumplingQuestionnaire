@@ -36,7 +36,7 @@
                     <a href="{{ url_for('recipe') }}" class="dark-peach">Recipe</a>
                 </li>
                 <li>
-                    <a class="dark-peach">3</a>
+                    <a href="{{ url_for('questionnaire', id='1') }}" class="dark-peach">Qustionnaire</a>
                 </li>
                 {% if session['username'] %}
                     <li>
@@ -59,7 +59,7 @@
                         <a href="{{ url_for('recipe') }}" class="dark-peach">Recipe</a>
                     </li>
                     <li>
-                        <a class="dark-peach">3</a>
+                        <a href="{{ url_for('questionnaire', id='1') }}" class="dark-peach">Qustionnaire</a>
                     </li>
                     {% if session['username'] %}
                         <li>

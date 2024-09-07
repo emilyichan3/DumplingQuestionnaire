@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block additional_js %}
+    <script src="/static/javascript/questionnaire-script.js"></script>
+    <script src="/static/javascript/questionnaire-data.js"></script>
+{% endblock %}
+
+{% block main %}
+    <h1 >Questionnaire</h1>
+    <div>
+        <form method="POST">
+            <div>
+                <fieldset>
+                    <legend></legend>
+                    <table>
+                        <tbody id="questionnaire-context-list">
+                            <tr>
+                                <td rowspan="6"><label id="question-label">PLACEHOLD</label></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <button class="btn btn-bg btn-primary" type="button">Next</button>
+            </div>
+            <button class="btn btn-bg btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

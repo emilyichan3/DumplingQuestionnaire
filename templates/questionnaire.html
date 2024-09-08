@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block additional_js %}
-    <!-- <script src="/static/javascript/questionnaire-script.js"></script> -->
-    <!-- <script src="/static/javascript/questionnaire-data.js"></script> -->
 {% endblock %}
 
 {% block main %}
     <h1 >Questionnaire</h1>
-    {% for qustion in questions.values() %}
-        <div id="question-section-{{ qustion.id }}" class="question-section">
+    <form action="{{ url_for('questionnaire_submit') }}" method="POST">
+        {% for qustion in questions.values() %}
+        <div id="question-section-{{ qustion.questionnaire_id }}" class="question-section">
+
             <fieldset>
                 <legend></legend>
                 <table>
@@ -17,7 +17,7 @@
                             <td rowspan="5"><label id="question-label">{{ qustion.question }}</label></td>
                             <td>
                                 <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="never">
+                                    <input type="radio" name="{{ qustion.group_name }}" value="never" required>
                                     Rarely, Almost Never or Never
                                 </label>
                             </td>
@@ -54,20 +54,11 @@
                                 </label>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <button class="btn btn-bg btn-primary" type="button">Previous</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-bg btn-primary" type="button">Next</button>
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </fieldset>
         </div>
     {% endfor %}
-    <form>
-        <button class="btn btn-sm btn-danger" type="submit">Submit</button>
+    <button class="btn btn-primary" type="submit">Submit</button>
     </form>
 {% endblock %}

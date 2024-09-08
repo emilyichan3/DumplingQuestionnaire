@@ -69,7 +69,7 @@ header{
 }
 
 form {
-    margin-bottom:50px;
+    margin-bottom:10px;
 }
 
 .image-container {
@@ -81,8 +81,14 @@ form {
 }
 .question-section {
     margin: 0;
-    padding: 5em 0;
+    padding: 1em 0;
 }
+
+.layout-pieChart {
+    width: 100%;
+    height: 100%;
+}
+
 
 @media (min-width: 767px) {
     #wrapper {
@@ -106,6 +112,12 @@ form {
     #small-menu {
         display: none;
     }
+
+    #layout-pieChart {
+        width: 500px;
+        height: 500px;
+    }
+    
 }
 
 footer {

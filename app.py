@@ -1,10 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 
-from database import questionnaire_datastore
+from database import questionnaire_datastore, questionnaire_result_datastore
 
 app = Flask(__name__)
 
 app.secret_key = 'Replace me with a real secret key for production use'
+
+starter_result = questionnaire_result_datastore["1"]
+maincourse_result = questionnaire_result_datastore["2"]
+sidedish_result = questionnaire_result_datastore["3"]
+dessert_result = questionnaire_result_datastore["4"]
+homemade_result = questionnaire_result_datastore["5"]
+froze_result = questionnaire_result_datastore["6"]
+takeaway_result = questionnaire_result_datastore["7"]
+restaurant_result = questionnaire_result_datastore["8"]
 
 user_datastore = {}
 
@@ -21,6 +30,78 @@ def recipe():
 def questionnaire():
     return render_template("questionnaire.html", questions=questionnaire_datastore)
 
+
+@app.route("/questionnaire_result")
+def questionnaire_result():
+    return render_template("questionnaire_result.html", answers=questionnaire_result_datastore)
+
+
+@app.route("/questionnaire_per_result/<id>")
+def questionnaire_per_result(id):
+    never_count = questionnaire_result_datastore[id].questionnaire_answers.count('never')
+    sometimes_count = questionnaire_result_datastore[id].questionnaire_answers.count('sometimes')
+    often_count = questionnaire_result_datastore[id].questionnaire_answers.count('often')
+    very_count = questionnaire_result_datastore[id].questionnaire_answers.count('very')
+    almost_count = questionnaire_result_datastore[id].questionnaire_answers.count('almost')
+    data = [
+            ('Never', never_count),
+            ('Sometimes', sometimes_count),
+            ('Often', often_count),
+            ('Very', very_count),
+            ('Almost', almost_count)
+        ]
+
+    labels = [row[0] for row in data]
+    values = [row[1] for row in data]
+    return render_template("questionnaire_result.html", answer=questionnaire_result_datastore[id], labels=labels, values=values)
+
+
+
+@app.route("/questionnaire_submit", methods=["POST"])
+def questionnaire_submit():
+    """Sumbit the questionnaire."""
+    # Get the values from the form.
+    starter = request.form["starter"]
+    maincourse = request.form["main-course"]
+    sidedish = request.form["side-dish"]
+    dessert = request.form["dessert"]
+    homemade = request.form["homemade"]
+    froze = request.form["froze"]
+    takeaway = request.form["takeaway"]
+    restaurant = request.form["restaurant"]
+
+  
+    starter_result.answer(starter)
+    starter_result.update_count()
+
+    maincourse_result.answer(maincourse)
+    maincourse_result.update_count()
+
+    sidedish_result.answer(sidedish)
+    sidedish_result.update_count()
+
+    dessert_result.answer(dessert)
+    dessert_result.update_count()
+
+    homemade_result.answer(homemade)
+    homemade_result.update_count()
+
+    froze_result.answer(froze)
+    froze_result.update_count()
+
+    takeaway_result.answer(takeaway)
+    takeaway_result.update_count()
+
+    restaurant_result.answer(restaurant)
+    restaurant_result.update_count()
+
+
+
+    # questionnaire_answers_datastore["1"] =starter_result
+
+
+    # Redirect to the questionnaire page.
+    return redirect(url_for("questionnaire_result"))
 
 
 @app.route('/login', methods=['GET'])
@@ -72,6 +153,7 @@ def logout():
 
     # Redirect to the home page.
     return redirect(url_for('index'))
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)

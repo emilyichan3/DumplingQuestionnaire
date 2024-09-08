@@ -40,6 +40,9 @@
                 </li>
                 {% if session['username'] %}
                     <li>
+                        <a href="{{ url_for('questionnaire_result') }}" class="dark-peach">Result</a>
+                    </li>
+                    <li>
                         <a href="{{ url_for('logout') }}" class="dark-peach">Log out</a>
                     </li>
                 {% else %}
@@ -62,6 +65,9 @@
                         <a href="{{ url_for('questionnaire') }}" class="dark-peach">Qustionnaire</a>
                     </li>
                     {% if session['username'] %}
+                        <li>
+                            <a href="{{ url_for('questionnaire_result') }}" class="dark-peach">Result</a>
+                        </li>
                         <li>
                             <a href="{{ url_for('logout') }}" class="dark-peach">Log out</a>
                         </li>

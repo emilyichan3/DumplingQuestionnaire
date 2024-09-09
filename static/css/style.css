@@ -83,12 +83,18 @@ form {
     margin: 0;
     padding: 1em 0;
 }
-
-.layout-pieChart {
-    width: 100%;
-    height: 100%;
+canvas {
+    display: block;
 }
 
+.chart-container {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-flow: column wrap; */
+}
 
 @media (min-width: 767px) {
     #wrapper {
@@ -113,11 +119,18 @@ form {
         display: none;
     }
 
-    #layout-pieChart {
-        width: 500px;
-        height: 500px;
+    .chart-container {
+        width: 440px;
+        height: 300px;
+        /* background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
-    
 }
 
 footer {

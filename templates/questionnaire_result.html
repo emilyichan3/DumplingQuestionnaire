@@ -17,35 +17,34 @@
         <li>Counts: {{ answer.count }}</li>
         <li>{{ answer.count.keys() | list }}</li>
         <li>{{ answer.count.values() | list }}</li>
-        <!-- {% for value in answer.questionnaire_answers %}
-        <li>{{ value }}</li>
-        {% endfor %} -->
-
-        <canvas id="pieChart-{{ answer.questionnaire_id }}" class="layout-pieChart"></canvas>
-        <script>
-            var ctx = document.getElementById("pieChart-{{ answer.questionnaire_id }}").getContext("2d");
-            var pieChart = new Chart(ctx, {
-                    type: "pie",
-                    data: {
-                        labels: {{ answer.count.keys() | list | safe }},
-                        datasets: [{
-                            textinfo: "label+percent",
-                            backgroundColor: barColors,
-                            data: {{ answer.count.values() | list | safe }}
-                        }]
-                    },
-                    options: {
-                        responsive: false,
-                        plugins: {
-                            title: {
-                            display: true,
-                            text: "{{ answer.question }}"
-                            }
+    </ul>
+    <div class="chart-container">
+        <canvas id="pieChart-{{ answer.questionnaire_id }}"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById("pieChart-{{ answer.questionnaire_id }}").getContext("2d");
+        var pieChart = new Chart(ctx, {
+                type: "pie",
+                data: {
+                    labels: {{ answer.count.keys() | list | safe }},
+                    datasets: [{
+                        textinfo: "label+percent",
+                        backgroundColor: barColors,
+                        data: {{ answer.count.values() | list | safe }}
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    plugins: {
+                        title: {
+                        display: true,
+                        text: "{{ answer.question }}"
                         }
                     }
-                });        
-        </script>
-    </ul>
+                }
+            });        
+    </script>
+
 </div>
 {% endfor %}
 {% endblock %}

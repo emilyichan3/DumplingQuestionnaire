@@ -10,13 +10,18 @@
 {% for answer in answers.values() %}
 <div>
     <ul>
-        <li id="question-{{ answer.questionnaire_id }}">Questionnaire: {{ answer.question }}</li>
-        <li id="id-{{ answer.questionnaire_id }}">{{ answer.questionnaire_id }}</li>
-        <li>Counts: {{ answer.count }}</li>
-        <li id="keys-{{ answer.questionnaire_id }}">{{ answer.count.keys() | list }}</li>
-        <li id="values-{{ answer.questionnaire_id }}">{{ answer.count.values() | list }}</li>
+        <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
+        <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
+        <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
+        <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
     </ul>
     <div class="chart-container">
+        <p class="hide-id">{{ answer.questionnaire_id }}</p>
+        <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>
+        <script src="/static/javascript/piechart.js"></script>
+    </div>
+</div>
+    <!-- <div class="chart-container">
         <canvas id="pieChart-{{ answer.questionnaire_id }}"></canvas>
     </div>
     <script>
@@ -41,12 +46,9 @@
                     }
                 }
             });        
-    </script>
+    </script> -->
 
-</div>
+
 {% endfor %}
-<div class="chart-container">
-    <canvas id="pie-1"></canvas>
-    <script src="/static/javascript/piechart.js"></script>
-</div>
+
 {% endblock %}

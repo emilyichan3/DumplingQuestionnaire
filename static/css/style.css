@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    scroll-behavior: smooth;
 }
 body{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -79,10 +80,7 @@ form {
 .food-image img {
     width: 100%;
 }
-.question-section {
-    margin: 0;
-    padding: 1em 0;
-}
+
 canvas {
     display: block;
 }
@@ -94,6 +92,28 @@ canvas {
     justify-content: center;
     align-items: center;
     /* flex-flow: column wrap; */
+}
+.question-section {
+    border: 2px solid rgb(218, 206, 47);
+    border-radius: 4px;
+    display: block;
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+}
+.question-section input:focus {
+    outline: 0;
+}
+.question-section.success input {
+    border-color: #09c372;
+}
+.question-section.error input {
+    border-color: #ff3860;
+}
+.question-section .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
 }
 
 @media (min-width: 767px) {

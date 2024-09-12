@@ -1,64 +1,68 @@
 {% extends "base.html" %}
 
 {% block additional_js %}
+    <script src="/static/javascript/questionnaire-script.js"></script>
 {% endblock %}
 
 {% block main %}
     <h1 >Questionnaire</h1>
-    <form action="{{ url_for('questionnaire_submit') }}" method="POST">
+    <form id="questionnaireform" action="{{ url_for('questionnaire_submit') }}" method="POST" name="mainform">
         {% for qustion in questions.values() %}
-        <div id="question-section-{{ qustion.questionnaire_id }}" class="question-section">
-
-            <fieldset>
-                <legend></legend>
-                <table>
-                    <tbody id="questionnaire-context-list">
-                        <tr>
-                            <td rowspan="5"><label id="question-label">{{ qustion.question }}</label></td>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="never" required>
-                                    Rarely, Almost Never or Never
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="sometimes">
-                                    Occasionally or Sometimes
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="often">
-                                    Often or Frequently
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="very">
-                                    Very Frequently
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="almost">
-                                    Almost Always or Always
-                                </label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </fieldset>
-        </div>
-    {% endfor %}
-    <button class="btn btn-primary" type="submit">Submit</button>
+        <section>
+            <div id="question-section-{{ qustion.questionnaire_id }}" class="question-section">
+                <fieldset>
+                    <legend></legend>
+                    <table>
+                        <tbody id="questionnaire-context-list">
+                            <tr>
+                                <td rowspan="5"><label id="question-label">{{ qustion.question }}</label></td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="never">
+                                        Rarely, Almost Never or Never
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="sometimes">
+                                        Occasionally or Sometimes
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="often">
+                                        Often or Frequently
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="very">
+                                        Very Frequently
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="almost">
+                                        Almost Always or Always
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <div id="error-{{ qustion.questionnaire_id }}" class="error">
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        <button class="btn btn-primary" type="submit" name="btnSubmit">Submit</button>
     </form>
 {% endblock %}

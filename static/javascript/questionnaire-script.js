@@ -1,39 +1,81 @@
+const errorMessage = 'Please select this question';
+
+const setError = (element, message) => {
+    const inputControl = document.getElementById(element);
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('success');
+};
+
+const setSuccess = (element) => {
+    const inputControl = document.getElementById(element);
+    console.log(`setSuccess ${inputControl}`);
+    const errorDisplay = inputControl.querySelector('.error');
+
+    errorDisplay.innerText = '';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
 function init(){
-    let questionId =  window.location.pathname.split('/').at(-1);
+    const form = document.getElementById('questionnaireform');
 
-    let targetQuestion = QUESTIONS.filter(question => question.id === questionId);
-    let title = document.getElementById('question-label');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var starter = document.mainform.starter;
+        var validate_starter = validateInputs(starter, 'question-section-1');
 
-    title.innerText = targetQuestion[0].question;
+        var maincourse = document.mainform.maincourse;
+        var validate_maincourse = validateInputs(maincourse, 'question-section-2');
 
-    let allOptions = targetQuestion.map( x => x.options)[0];
-    for (let optionDetail in allOptions) {
-        addOption(allOptions[optionDetail]);
-      }
+        var sidedish = document.mainform.sidedish;
+        var validate_sidedish = validateInputs(sidedish, 'question-section-3');
+
+        var dessert = document.mainform.dessert;
+        var validate_dessert = validateInputs(dessert, 'question-section-4');
+
+        var homemade = document.mainform.homemade;
+        var validate_homemade = validateInputs(homemade, 'question-section-5');
+
+        var froze = document.mainform.froze;
+        var validate_froze = validateInputs(froze, 'question-section-6');
+
+        var takeaway = document.mainform.takeaway;
+        var validate_takeaway = validateInputs(takeaway, 'question-section-7');
+
+        var restaurant = document.mainform.restaurant;
+        var validate_restaurant = validateInputs(restaurant, 'question-section-8');
+
+        if (validate_starter & validate_maincourse & validate_sidedish & validate_dessert &
+            validate_homemade & validate_froze & validate_takeaway & validate_restaurant)
+        {
+            form.submit();
+        } else {
+            event.preventDefault();
+        }
+    })
 }
 
-function addOption(optionDetail){
-    let tbody = document.getElementById('questionnaire-context-list');    
+function validateInputs(radioGroup, sectionName) {
+    let question_id = sectionName
+    let question_validate = false;
 
-    let valueInput = document.createElement('input');
-    valueInput.setAttribute('type', 'radio');
-    valueInput.setAttribute('name', optionDetail.name);
-    valueInput.setAttribute('value', optionDetail.value);
-    
-    let valueLable = document.createElement('label');   
+    console.log(`step ${question_id}`);
 
-    let nameTd = document.createElement('td');
-    let optionTr = document.createElement('tr');
-
-    valueLable.append(valueInput);
-    //added <label> description after <input> element
-    valueLable.append(optionDetail.label);
-
-    nameTd.append(valueLable);
-    optionTr.append(nameTd);
-    
-    tbody.appendChild(optionTr);
+    for(var i=0; i<radioGroup.length;i++){
+        if(radioGroup[i].checked){
+            setSuccess(question_id);
+            return true;
+        }
+    }
+    if(!question_validate){
+        setError(question_id, errorMessage);
+        return false;
+    }
 }
-
 
 addEventListener('load', init);
+

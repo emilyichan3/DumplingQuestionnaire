@@ -62,8 +62,8 @@ def questionnaire_submit():
     """Sumbit the questionnaire."""
     # Get the values from the form.
     starter = request.form["starter"]
-    maincourse = request.form["main-course"]
-    sidedish = request.form["side-dish"]
+    maincourse = request.form["maincourse"]
+    sidedish = request.form["sidedish"]
     dessert = request.form["dessert"]
     homemade = request.form["homemade"]
     froze = request.form["froze"]

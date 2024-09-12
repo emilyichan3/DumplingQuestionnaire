@@ -1,4 +1,4 @@
-const errorMessage = 'Please select this question';
+const errorMessage = 'Requested';
 
 const setError = (element, message) => {
     const inputControl = document.getElementById(element);
@@ -21,41 +21,59 @@ const setSuccess = (element) => {
 
 function init(){
     const form = document.getElementById('questionnaireform');
-
+    
     form.addEventListener('submit', function(event) {
         event.preventDefault();
-        
-        var starter = document.mainform.starter;
-        var validate_starter = validateInputs(starter, 'question-section-1');
+        let errors=[];
 
+        var starter = document.mainform.starter;
+        if (!validateInputs(starter, 'question-section-1')){
+            errors.push('question-section-1');
+        };
+        
         var maincourse = document.mainform.maincourse;
-        var validate_maincourse = validateInputs(maincourse, 'question-section-2');
+        if (!validateInputs(maincourse, 'question-section-2')){
+            errors.push('question-section-2');
+        };
 
         var sidedish = document.mainform.sidedish;
-        var validate_sidedish = validateInputs(sidedish, 'question-section-3');
+        if (!validateInputs(sidedish, 'question-section-3')){
+            errors.push('question-section-3');
+        };
 
         var dessert = document.mainform.dessert;
-        var validate_dessert = validateInputs(dessert, 'question-section-4');
+        if (!validateInputs(dessert, 'question-section-4')){
+            errors.push('question-section-4');
+        };
 
         var homemade = document.mainform.homemade;
-        var validate_homemade = validateInputs(homemade, 'question-section-5');
+        if (!validateInputs(homemade, 'question-section-5')){
+            errors.push('question-section-5');
+        };
 
         var froze = document.mainform.froze;
-        var validate_froze = validateInputs(froze, 'question-section-6');
+        if (!validateInputs(froze, 'question-section-6')){
+            errors.push('question-section-6');
+        };
 
         var takeaway = document.mainform.takeaway;
-        var validate_takeaway = validateInputs(takeaway, 'question-section-7');
-
+        if (!validateInputs(takeaway, 'question-section-7')){
+            errors.push('question-section-7');
+        };
         var restaurant = document.mainform.restaurant;
-        var validate_restaurant = validateInputs(restaurant, 'question-section-8');
+        if (!validateInputs(restaurant, 'question-section-8')){
+            errors.push('question-section-8');
+        };
 
-        if (validate_starter & validate_maincourse & validate_sidedish & validate_dessert &
-            validate_homemade & validate_froze & validate_takeaway & validate_restaurant)
-        {
-            form.submit();
+        if (Array.isArray(errors) && errors.length > 0){
+            const firstError = errors[0];
+            console.log(`first error: ${firstError}`);
+            var element = document.getElementById(errors[0])
+            
+            element.scrollIntoView({ behavior: "smooth", block: "center" });
         } else {
-            event.preventDefault();
-        }
+            form.submit();
+        } 
     })
 }
 

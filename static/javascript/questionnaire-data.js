@@ -15,22 +15,22 @@ const QUESTIONS = [
         id: '2',
         question: 'Eat dumplings as main course?',
         options: [
-            { 'name': 'main-course', 'value': 'never', 'label': 'Rarely, Almost Never or Never' },
-            { 'name': 'main-course', 'value': 'sometimes', 'label': 'Occasionally or Sometimes' },
-            { 'name': 'main-course', 'value': 'often', 'label': 'Often or Frequently' },
-            { 'name': 'main-course', 'value': 'very', 'label': 'Very Frequently' },
-            { 'name': 'main-course', 'value': 'always', 'label': 'Almost Always or Always' }
+            { 'name': 'maincourse', 'value': 'never', 'label': 'Rarely, Almost Never or Never' },
+            { 'name': 'maincourse', 'value': 'sometimes', 'label': 'Occasionally or Sometimes' },
+            { 'name': 'maincourse', 'value': 'often', 'label': 'Often or Frequently' },
+            { 'name': 'maincourse', 'value': 'very', 'label': 'Very Frequently' },
+            { 'name': 'maincourse', 'value': 'always', 'label': 'Almost Always or Always' }
         ]
     },
     {
         id: '3',
         question: 'Eat dumplings as a side dish?',
         options: [
-            { 'name': 'side-dish', 'value': 'never', 'label': 'Rarely, Almost Never or Never' },
-            { 'name': 'side-dish', 'value': 'sometimes', 'label': 'Occasionally or Sometimes' },
-            { 'name': 'side-dish', 'value': 'often', 'label': 'Often or Frequently' },
-            { 'name': 'side-dish', 'value': 'very', 'label': 'Very Frequently' },
-            { 'name': 'side-dish', 'value': 'always', 'label': 'Almost Always or Always' }
+            { 'name': 'sidedish', 'value': 'never', 'label': 'Rarely, Almost Never or Never' },
+            { 'name': 'sidedish', 'value': 'sometimes', 'label': 'Occasionally or Sometimes' },
+            { 'name': 'sidedish', 'value': 'often', 'label': 'Often or Frequently' },
+            { 'name': 'sidedish', 'value': 'very', 'label': 'Very Frequently' },
+            { 'name': 'sidedish', 'value': 'always', 'label': 'Almost Always or Always' }
         ]
     },
     {

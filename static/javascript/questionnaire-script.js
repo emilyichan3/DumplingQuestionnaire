@@ -1,4 +1,4 @@
-const errorMessage = 'Requested';
+const errorMessage = '*Requested';
 
 const setError = (element, message) => {
     const inputControl = document.getElementById(element);

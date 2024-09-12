@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 
 {% block additional_js %}
-    <!-- <script src="/static/javascript/questionnaire-script.js"></script> -->
-    <!-- <script src="/static/javascript/questionnaire-data.js"></script> -->
      <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 {% endblock %}
 
 {% block main %}
@@ -11,12 +10,11 @@
 {% for answer in answers.values() %}
 <div>
     <ul>
-        <li>Questionnaire: {{ answer.question }}</li>
-        <li>Answers: {{ answer.questionnaire_answers }}</li>
-        <li>Answers: {{ answer.questionnaire_answers | length}}</li>
+        <li id="question-{{ answer.questionnaire_id }}">Questionnaire: {{ answer.question }}</li>
+        <li id="id-{{ answer.questionnaire_id }}">{{ answer.questionnaire_id }}</li>
         <li>Counts: {{ answer.count }}</li>
-        <li>{{ answer.count.keys() | list }}</li>
-        <li>{{ answer.count.values() | list }}</li>
+        <li id="keys-{{ answer.questionnaire_id }}">{{ answer.count.keys() | list }}</li>
+        <li id="values-{{ answer.questionnaire_id }}">{{ answer.count.values() | list }}</li>
     </ul>
     <div class="chart-container">
         <canvas id="pieChart-{{ answer.questionnaire_id }}"></canvas>
@@ -47,4 +45,8 @@
 
 </div>
 {% endfor %}
+<div class="chart-container">
+    <canvas id="pie-1"></canvas>
+    <script src="/static/javascript/piechart.js"></script>
+</div>
 {% endblock %}

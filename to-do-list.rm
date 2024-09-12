@@ -1,1 +1,7 @@
-to focus to the invalidate question div
+Next:
+ - remove recipe page
+ - 
+    login - can see the result + own's answer
+   logout - only can enter the questionnaire 
+
+if there is a chance -- try to move javascript code from questionnaire_result into piechart.justify

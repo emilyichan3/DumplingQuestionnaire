@@ -9,7 +9,6 @@ class Questionnaire_result:
     def __init__(self, questionnaire_id, question):
         self.questionnaire_id = questionnaire_id
         self.question = question
-        self.questionnaire_answers =[]
         self.count = {
             'never':  0,
             'sometimes':  0,
@@ -19,11 +18,5 @@ class Questionnaire_result:
         }
 
     def answer(self, questionnaire_answer):
-        self.questionnaire_answers.append(questionnaire_answer)
+        self.count[questionnaire_answer] +=1
 
-    def update_count(self):
-        self.count['never'] = self.questionnaire_answers.count('never')
-        self.count['sometimes'] = self.questionnaire_answers.count('sometimes')
-        self.count['often'] = self.questionnaire_answers.count('often')
-        self.count['very'] = self.questionnaire_answers.count('very')
-        self.count['almost'] = self.questionnaire_answers.count('almost')

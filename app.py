@@ -38,11 +38,12 @@ def questionnaire_result():
 
 @app.route("/questionnaire_per_result/<id>")
 def questionnaire_per_result(id):
-    never_count = questionnaire_result_datastore[id].questionnaire_answers.count('never')
-    sometimes_count = questionnaire_result_datastore[id].questionnaire_answers.count('sometimes')
-    often_count = questionnaire_result_datastore[id].questionnaire_answers.count('often')
-    very_count = questionnaire_result_datastore[id].questionnaire_answers.count('very')
-    almost_count = questionnaire_result_datastore[id].questionnaire_answers.count('almost')
+    never_count = questionnaire_result_datastore[id].count['never']
+    sometimes_count = questionnaire_result_datastore[id].count['sometimes']
+    often_count = questionnaire_result_datastore[id].count['often']
+    very_count = questionnaire_result_datastore[id].count['very']
+    almost_count = questionnaire_result_datastore[id].count['almost']
+
     data = [
             ('Never', never_count),
             ('Sometimes', sometimes_count),
@@ -70,35 +71,14 @@ def questionnaire_submit():
     takeaway = request.form["takeaway"]
     restaurant = request.form["restaurant"]
 
-  
     starter_result.answer(starter)
-    starter_result.update_count()
-
     maincourse_result.answer(maincourse)
-    maincourse_result.update_count()
-
     sidedish_result.answer(sidedish)
-    sidedish_result.update_count()
-
     dessert_result.answer(dessert)
-    dessert_result.update_count()
-
     homemade_result.answer(homemade)
-    homemade_result.update_count()
-
     froze_result.answer(froze)
-    froze_result.update_count()
-
     takeaway_result.answer(takeaway)
-    takeaway_result.update_count()
-
     restaurant_result.answer(restaurant)
-    restaurant_result.update_count()
-
-
-
-    # questionnaire_answers_datastore["1"] =starter_result
-
 
     # Redirect to the questionnaire page.
     return redirect(url_for("questionnaire_result"))

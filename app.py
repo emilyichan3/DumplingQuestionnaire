@@ -77,7 +77,11 @@ def questionnaire_submit():
     restaurant_result.answer(restaurant)
 
     # Redirect to the questionnaire page.
-    return redirect(url_for("questionnaire_result"))
+    if 'username' in session:
+        return redirect(url_for("questionnaire_result"))
+    else:
+        return redirect(url_for("questionnaire"))
+    
 
 
 @app.route('/login', methods=['GET'])

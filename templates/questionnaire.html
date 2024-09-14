@@ -6,61 +6,70 @@
 
 {% block main %}
     <h1 >Questionnaire</h1>
-    <form id="questionnaireform" action="{{ url_for('questionnaire_submit') }}" method="POST" name="mainform">
-        {% for qustion in questions.values() %}
-        <div id="question-section-{{ qustion.questionnaire_id }}" class="question-section">
-            <fieldset>
-                <legend></legend>
-                <table>
-                    <tbody id="questionnaire-context-list">
-                        <tr>
-                            <td rowspan="5"><label id="question-label">{{ qustion.question }}</label></td>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="never">
-                                    Rarely, Almost Never or Never
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="sometimes">
-                                    Occasionally or Sometimes
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="often">
-                                    Often or Frequently
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="very">
-                                    Very Frequently
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <label>
-                                    <input type="radio" name="{{ qustion.group_name }}" value="almost">
-                                    Almost Always or Always
-                                </label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div id="error-{{ qustion.questionnaire_id }}" class="error">
-                </div>
-            </fieldset>
+    <div class="question-container">
+        <!-- <form id="questionnaireform" action="{{ url_for('questionnaire_submit') }}" method="POST" name="mainform"> -->
+            <form id="questionnaireform" method="POST" name="mainform">
+            {% for qustion in questions.values() %}
+            <div id="question-section-{{ qustion.questionnaire_id }}" class="question-section">
+                <fieldset>
+                    <legend></legend>
+                    <table>
+                        <tbody id="questionnaire-context-list">
+                            <tr>
+                                <td rowspan="5"><label id="question-label">{{ qustion.question }}</label></td>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="never">
+                                        Rarely, Almost Never or Never
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="sometimes">
+                                        Occasionally or Sometimes
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="often">
+                                        Often or Frequently
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="very">
+                                        Very Frequently
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="radio" name="{{ qustion.group_name }}" value="almost">
+                                        Almost Always or Always
+                                    </label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="error-{{ qustion.questionnaire_id }}" class="error">
+                    </div>
+                </fieldset>
+            </div>
+            {% endfor %}
+            <button class="btn btn-primary" type="submit" name="btnSubmit">Confirm</button>
+        </form>
+        <div class="popup">
+            <img src="/static/images/dumplings.jpg" alt="success">
+            <h2>Thank you!</h2>
+            <p>Please click the button to sumbit!</p>
+            <button type="button" class="btn btn-success" onclick="popupClose()">Submit</button>
         </div>
-        {% endfor %}
-        <button class="btn btn-primary" type="submit" name="btnSubmit">Submit</button>
-    </form>
+    </div>
 {% endblock %}

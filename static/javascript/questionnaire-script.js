@@ -19,9 +19,10 @@ const setSuccess = (element) => {
     inputControl.classList.remove('error');
 };
 
+
 function init(){
     const form = document.getElementById('questionnaireform');
-    
+    const popup = document.querySelector('.popup');
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         let errors=[];
@@ -72,9 +73,10 @@ function init(){
             
             element.scrollIntoView({ behavior: "smooth", block: "center" });
         } else {
-            form.submit();
+            popup.classList.add('poppedup');
+            // form.submit();
         } 
-    })
+    })   
 }
 
 function validateInputs(radioGroup, sectionName) {
@@ -89,10 +91,19 @@ function validateInputs(radioGroup, sectionName) {
             return true;
         }
     }
+
     if(!question_validate){
         setError(question_id, errorMessage);
         return false;
     }
+}
+
+function popupClose() {
+    const form = document.getElementById('questionnaireform');
+    const popup = document.querySelector('.popup');
+    popup.classList.remove('poppedup');
+    form.action = "questionnaire_submit";
+    form.submit();
 }
 
 addEventListener('load', init);

@@ -18,7 +18,7 @@
             <h1>Dumplings</h1>
             <div>
                 {% if session['username'] %}
-                    <p>Welcome, {{ session['username'] }}</p>
+                    <p id="username">Welcome, {{ session['username'] }}</p>
                 {% endif %}
             </div>
         </header>

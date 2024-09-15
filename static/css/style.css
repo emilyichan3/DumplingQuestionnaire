@@ -25,6 +25,9 @@ body{
     margin: 0;
     background-color: var(--wrap-bg-color);
 }
+.main-content {
+    padding: 0;
+}
 
 .header-container {
     width: 100%;
@@ -171,12 +174,24 @@ canvas {
 .hide-id {
     display: none;
 }
+.hide {
+    display: none;
+}
 
 .question-container {
     display: flex;
     justify-content: left;
     align-items: center;
 }
+
+.flex-chart{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 0;
+    align-items: left;
+}
+
 .popup {
     width: 400px;
     position: fixed;
@@ -313,6 +328,9 @@ footer p{
     }
     main {
         margin: 0;
+    }
+    .main-content {
+        padding: 0 5%;
     }
     #big-menu {
         display: block;

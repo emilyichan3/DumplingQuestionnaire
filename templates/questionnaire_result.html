@@ -8,48 +8,21 @@
 
 {% block main %}
 <!-- dictionary -->
-{% for answer in answers.values() %}
-<div>
-    <ul>
-        <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
-        <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
-        <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
-        <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
-    </ul>
-    <div class="chart-container">
-        <p class="hide-id">{{ answer.questionnaire_id }}</p>
-        <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>
-        <script src="/static/javascript/piechart.js"></script>
+ <div class="flex-chart">
+    {% for answer in answers.values() %}
+    <div>
+        <ul>
+            <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
+            <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
+            <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
+            <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
+        </ul>
+        <div class="chart-container">
+            <p class="hide-id">{{ answer.questionnaire_id }}</p>
+            <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>
+            <script src="/static/javascript/piechart.js"></script>
+        </div>
     </div>
-</div>
-    <!-- <div class="chart-container">
-        <canvas id="pieChart-{{ answer.questionnaire_id }}"></canvas>
-    </div>
-    <script>
-        var ctx = document.getElementById("pieChart-{{ answer.questionnaire_id }}").getContext("2d");
-        var pieChart = new Chart(ctx, {
-                type: "pie",
-                data: {
-                    labels: {{ answer.count.keys() | list | safe }},
-                    datasets: [{
-                        textinfo: "label+percent",
-                        backgroundColor: barColors,
-                        data: {{ answer.count.values() | list | safe }}
-                    }]
-                },
-                options: {
-                    responsive: false,
-                    plugins: {
-                        title: {
-                        display: true,
-                        text: "{{ answer.question }}"
-                        }
-                    }
-                }
-            });        
-    </script> -->
-
-
-{% endfor %}
-
+    {% endfor %}
+ </div>
 {% endblock %}

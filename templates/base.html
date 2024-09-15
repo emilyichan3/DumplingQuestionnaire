@@ -22,6 +22,19 @@
                 {% endif %}
             </div>
         </header>
+        {% set navigation_bar_userlogin = [
+            ('/', 'index', 'Home'),
+            ('/questionnaire', 'questionnaire', 'Qustionnaire'),
+            ('/questionnaire_result', 'questionnaire_result', 'Result'),
+            ('/logout', 'logout', 'Log out')
+        ] -%}
+
+        {% set navigation_bar_userlogout = [
+            ('/', 'index', 'Home'),
+            ('/questionnaire', 'questionnaire', 'Qustionnaire'),
+            ('/login', 'login', 'Login')
+        ] -%}
+        {% set active_page = active_page|default('index') -%}
         <div id="small-menu">
             <button type="button" id="menubar" onclick="menuBar()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -29,49 +42,72 @@
                   </svg>
             </button>
             <ul id="menu-list">
+                {% if session['username'] %}
+                    {% for href, page_id, caption in navigation_bar_userlogin %}
+                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                    {% endfor %}
+                {% else %}
+                    {% for href, page_id, caption in navigation_bar_userlogout %}
+                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+
+            <!-- <ul id="menu-list">
                 <li>
-                    <a href="{{ url_for('index') }}" class="dark-peach">Home</a>
+                    <a href="{{ url_for('index') }}">Home</a>
                 </li>
                 <li>
-                    <a href="{{ url_for('questionnaire') }}" class="dark-peach">Qustionnaire</a>
+                    <a href="{{ url_for('questionnaire') }}">Qustionnaire</a>
                 </li>
                 {% if session['username'] %}
                     <li>
-                        <a href="{{ url_for('questionnaire_result') }}" class="dark-peach">Result</a>
+                        <a href="{{ url_for('questionnaire_result') }}">Result</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('logout') }}" class="dark-peach">Log out</a>
+                        <a href="{{ url_for('logout') }}">Log out</a>
                     </li>
                 {% else %}
                     <li>
-                        <a href="{{ url_for('login') }}" class="dark-peach">Login</a>
+                        <a href="{{ url_for('login') }}">Login</a>
                     </li>
                 {% endif %}
-            </ul>
+            </ul> -->
         </div>
         <div id="big-menu">
-            <nav>
+            <ul>
+                {% if session['username'] %}
+                    {% for href, page_id, caption in navigation_bar_userlogin %}
+                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                    {% endfor %}
+                {% else %}
+                    {% for href, page_id, caption in navigation_bar_userlogout %}
+                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+            <!-- <nav>
                 <ul>
                     <li>
-                        <a href="{{ url_for('index') }}" class="dark-peach">Home</a>
+                        <a href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li>
-                        <a href="{{ url_for('questionnaire') }}" class="dark-peach">Qustionnaire</a>
+                        <a href="{{ url_for('questionnaire') }}">Qustionnaire</a>
                     </li>
                     {% if session['username'] %}
                         <li>
-                            <a href="{{ url_for('questionnaire_result') }}" class="dark-peach">Result</a>
+                            <a href="{{ url_for('questionnaire_result') }}">Result</a>
                         </li>
                         <li>
-                            <a href="{{ url_for('logout') }}" class="dark-peach">Log out</a>
+                            <a href="{{ url_for('logout') }}">Log out</a>
                         </li>
                     {% else %}
                         <li>
-                            <a href="{{ url_for('login') }}" class="dark-peach">Login</a>
+                            <a href="{{ url_for('login') }}">Login</a>
                         </li>
                     {% endif %}
                 </ul>
-            </nav>
+            </nav> -->
         </div>
         <main>
             {# (Jinja comment) The block below will be replaced by each of the pages #}

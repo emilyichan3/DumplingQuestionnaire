@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% set active_page = "questionnaire" %}
 
 {% block additional_js %}
     <script src="/static/javascript/questionnaire-script.js"></script>
@@ -16,7 +17,9 @@
                     <table>
                         <tbody id="questionnaire-context-list">
                             <tr>
-                                <td rowspan="5"><label id="question-label">{{ qustion.question }}</label></td>
+                                <td><label>{{ qustion.questionnaire_id }}. {{ qustion.question }}</label></td>
+                            </tr>
+                            <tr>
                                 <td>
                                     <label>
                                         <input type="radio" name="{{ qustion.group_name }}" value="never">

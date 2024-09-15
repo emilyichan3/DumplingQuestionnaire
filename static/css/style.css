@@ -69,6 +69,10 @@ header{
     margin-right: 0;
 }
 
+.page-active{
+    font-weight: bold;
+}
+
 form {
     margin-bottom:10px;
 }
@@ -140,6 +144,7 @@ canvas {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
+    z-index: 9999;
 }
 .popup img {
     width: 125px;
@@ -162,8 +167,26 @@ canvas {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+footer {
+    background-color: #545151;
+    color: #ffffff;
+    font-size: 80%;
+    text-align: center;
+    padding: 0;
+}
+
+footer a{
+    color: #FFFF00;
+}
+footer p{
+    padding: 0;
+    margin: 0;
+    line-height: 150%;
+}
+
 @media (min-width: 767px) {
     #wrapper {
+        padding: 0 5%;
         font-size: 18px;
     }
     main {
@@ -172,12 +195,47 @@ canvas {
     #big-menu {
         display: block;
     }
-    #big-menu nav{
-        float: left;
-        width: 150px;
-        padding: 20px;
+    #big-menu {
+        background-color: #eae3d1;
+        /* float: left; */
+        /* width: 150px; */
     }
-
+    #big-menu ul {
+        list-style-type: none;
+        border-top: 1px solid #eeeeee;
+        /* margin: 0;
+        padding: 0; */
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: start;
+        border-top: unset;
+    }
+    
+    #big-menu li {
+        text-align: center;
+        letter-spacing: 0.1em;
+        border-bottom: none;
+        padding: 0;
+        font-size: 18px;
+    }
+    #big-menu a {
+        margin: 0;
+        color: #0c0c0c;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+     
+    #big-menu li a {
+        width: 120px;
+        padding: 10px;
+    }
+    #big-menu a:hover {
+        text-decoration: underline;
+    }
+    
     #menubar {
         display: none;
     }
@@ -199,19 +257,3 @@ canvas {
     }
 }
 
-footer {
-    background-color: #545151;
-    color: #ffffff;
-    font-size: 80%;
-    text-align: center;
-    padding: 0;
-}
-
-footer a{
-    color: #FFFF00;
-}
-footer p{
-    padding: 0;
-    margin: 0;
-    line-height: 150%;
-}

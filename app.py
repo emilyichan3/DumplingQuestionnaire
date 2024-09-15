@@ -18,6 +18,7 @@ restaurant_result = questionnaire_result_datastore["8"]
 user_datastore = {}
 
 @app.route("/")
+@app.route("/index")
 def index():
     return render_template("index.html")
 

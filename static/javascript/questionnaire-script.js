@@ -70,7 +70,6 @@ function init(){
             const firstError = errors[0];
             console.log(`first error: ${firstError}`);
             var element = document.getElementById(errors[0])
-            
             element.scrollIntoView({ behavior: "smooth", block: "center" });
         } else {
             popup.classList.add('poppedup');

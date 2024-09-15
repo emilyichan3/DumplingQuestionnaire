@@ -14,106 +14,71 @@
 </head>
 <body>
     <div id="wrapper">
-        <header>
-            <h1>Dumplings</h1>
-            <div>
-                {% if session['username'] %}
-                    <p id="username">Welcome, {{ session['username'] }}</p>
-                {% endif %}
+        <div class="header-container">
+            <header class="top-navigation">
+                <div class="container">
+                    <div class="header-content">
+                        <h1>Dumplings</h1>
+                        <p id="username">{% if session['username'] %} Welcome {{ session['username'] }} {% endif %}</p>
+                        <!-- {% if session['username'] %}
+                                <p id="username">Welcome, {{ session['username'] }}</p>
+                        {% endif %} -->
+                    </div>
+                    <button type="button" id="menubar" onclick="menuBar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+            <div class="menu-container">
+                {% set navigation_bar_userlogin = [
+                    ('/', 'index', 'Home'),
+                    ('/questionnaire', 'questionnaire', 'Qustionnaire'),
+                    ('/questionnaire_result', 'questionnaire_result', 'Result'),
+                    ('/logout', 'logout', 'Log out')
+                ] -%}
+                {% set navigation_bar_userlogout = [
+                    ('/', 'index', 'Home'),
+                    ('/questionnaire', 'questionnaire', 'Qustionnaire'),
+                    ('/login', 'login', 'Login')
+                ] -%}
+                {% set active_page = active_page|default('index') -%}
+                <div id="big-menu">
+                    <ul>
+                        {% if session['username'] %}
+                            {% for href, page_id, caption in navigation_bar_userlogin %}
+                                <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                            {% endfor %}
+                        {% else %}
+                            {% for href, page_id, caption in navigation_bar_userlogout %}
+                                <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
+                <div id="small-menu">
+                    <ul id="menu-list">
+                        {% if session['username'] %}
+                            {% for href, page_id, caption in navigation_bar_userlogin %}
+                                <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                            {% endfor %}
+                        {% else %}
+                            {% for href, page_id, caption in navigation_bar_userlogout %}
+                                <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
-        </header>
-        {% set navigation_bar_userlogin = [
-            ('/', 'index', 'Home'),
-            ('/questionnaire', 'questionnaire', 'Qustionnaire'),
-            ('/questionnaire_result', 'questionnaire_result', 'Result'),
-            ('/logout', 'logout', 'Log out')
-        ] -%}
-
-        {% set navigation_bar_userlogout = [
-            ('/', 'index', 'Home'),
-            ('/questionnaire', 'questionnaire', 'Qustionnaire'),
-            ('/login', 'login', 'Login')
-        ] -%}
-        {% set active_page = active_page|default('index') -%}
-        <div id="small-menu">
-            <button type="button" id="menubar" onclick="menuBar()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-                  </svg>
-            </button>
-            <ul id="menu-list">
-                {% if session['username'] %}
-                    {% for href, page_id, caption in navigation_bar_userlogin %}
-                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
-                    {% endfor %}
-                {% else %}
-                    {% for href, page_id, caption in navigation_bar_userlogout %}
-                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
-                    {% endfor %}
-                {% endif %}
-            </ul>
-
-            <!-- <ul id="menu-list">
-                <li>
-                    <a href="{{ url_for('index') }}">Home</a>
-                </li>
-                <li>
-                    <a href="{{ url_for('questionnaire') }}">Qustionnaire</a>
-                </li>
-                {% if session['username'] %}
-                    <li>
-                        <a href="{{ url_for('questionnaire_result') }}">Result</a>
-                    </li>
-                    <li>
-                        <a href="{{ url_for('logout') }}">Log out</a>
-                    </li>
-                {% else %}
-                    <li>
-                        <a href="{{ url_for('login') }}">Login</a>
-                    </li>
-                {% endif %}
-            </ul> -->
         </div>
-        <div id="big-menu">
-            <ul>
-                {% if session['username'] %}
-                    {% for href, page_id, caption in navigation_bar_userlogin %}
-                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
-                    {% endfor %}
-                {% else %}
-                    {% for href, page_id, caption in navigation_bar_userlogout %}
-                        <li {% if page_id == active_page %} class="page-active" {% endif %}><a href="{{ href|e }}">{{ caption|e }}</a></li>
-                    {% endfor %}
-                {% endif %}
-            </ul>
-            <!-- <nav>
-                <ul>
-                    <li>
-                        <a href="{{ url_for('index') }}">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ url_for('questionnaire') }}">Qustionnaire</a>
-                    </li>
-                    {% if session['username'] %}
-                        <li>
-                            <a href="{{ url_for('questionnaire_result') }}">Result</a>
-                        </li>
-                        <li>
-                            <a href="{{ url_for('logout') }}">Log out</a>
-                        </li>
-                    {% else %}
-                        <li>
-                            <a href="{{ url_for('login') }}">Login</a>
-                        </li>
-                    {% endif %}
-                </ul>
-            </nav> -->
+        <div class="main-content">
+            <main>
+                {# (Jinja comment) The block below will be replaced by each of the pages #}
+                {% block main %}
+                {% endblock %}
+            </main>
         </div>
-        <main>
-            {# (Jinja comment) The block below will be replaced by each of the pages #}
-            {% block main %}
-            {% endblock %}
-        </main>
     </div>
     <footer>
         <p>© Copyright Yi-jung's UCD Ireland Payment Assignment 2024. All Rights Reserved. Please <a href="mailto:emilyichan3@gmail.com">Contact Me</a> for further queries.</p>

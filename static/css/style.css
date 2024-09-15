@@ -1,7 +1,11 @@
 :root {
-    --main-bg-color: #fdf9f3;
-    --wrap-bg-color: #c9caf0;
-    --nav-bg-color: #0dece1;
+    --wrap-bg-color: #f3e5e5;
+    --nav-bg-color: #eae3d1;
+    --main-bg-color: #fff;
+
+
+
+
 }
 * {
     box-sizing: border-box;
@@ -12,8 +16,9 @@ body{
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
     line-height: 1.4;
-}
+    height: 100%;
 
+}
 #wrapper{
     width: 100%;
     padding: 0;
@@ -21,11 +26,23 @@ body{
     background-color: var(--wrap-bg-color);
 }
 
-main {
-    color: #111111;
-    padding: 0.5em 0.5em 1em 0.5em;
-    background-color: var(--main-bg-color);
+.header-container {
+    width: 100%;
 }
+
+.top-navigation {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+} 
+.top-navigation .container {
+    display: flex;
+    flex-flow: row wrap;
+    background-color:transparent;
+    width: 100%;
+    justify-content:left;
+    margin: 0;
+} 
 
 header{      
     color: #333;
@@ -36,26 +53,39 @@ header{
     font-weight: bold;
 }
 
+#username {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
 #big-menu {
     display: none;
+    font-weight: lighter;
 }
 #small-menu {
     position: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: lighter;
 }
 
 #menubar {
     position: absolute;
-    right: 0;
+    right: 20px;
     background-color: transparent;
     border: 0;
     padding: 5px 0;
     margin: 0;
+    z-index: 9999;
 }
 
 #menu-list {
     display: none;
-    background-color: rgb(210, 231, 182);
+    background-color: var(--nav-bg-color);
     width: 100%;
+    margin: 0;
+    padding: 0;
     z-index: 1000;
 }
 #menu-list.open {
@@ -67,10 +97,31 @@ header{
     padding: 3px;
     text-align: center;
     margin-right: 0;
+    letter-spacing: 0.1em;
+    border-bottom: none;
+    padding: 0;
+    font-size: 18px;
+}
+#menu-list a {
+    color: #0c0c0c;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;    
+}
+#menu-list a:hover {
+    text-decoration: underline;
 }
 
 .page-active{
     font-weight: bold;
+}
+
+main {
+    color: #111111;
+    margin: 0 auto;
+    padding: 0.5em 0.5em 1em 0.5em;
+    background-color: var(--main-bg-color);
 }
 
 form {
@@ -95,8 +146,8 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-flow: column wrap; */
 }
+
 .question-section {
     border-radius: 4px;
     display: block;
@@ -168,6 +219,7 @@ canvas {
 }
 
 footer {
+    bottom: 0;
     background-color: #545151;
     color: #ffffff;
     font-size: 80%;
@@ -184,31 +236,27 @@ footer p{
     line-height: 150%;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 650px) {
     #wrapper {
-        padding: 0 5%;
+        padding: 0 0;
         font-size: 18px;
     }
     main {
-        margin-left: 165px;
+        margin: 0;
     }
     #big-menu {
         display: block;
-    }
-    #big-menu {
         background-color: #eae3d1;
-        /* float: left; */
-        /* width: 150px; */
+        padding: 0;
     }
     #big-menu ul {
         list-style-type: none;
         border-top: 1px solid #eeeeee;
-        /* margin: 0;
-        padding: 0; */
         display: flex;
         flex-flow: row nowrap;
-        justify-content: start;
-        border-top: unset;
+        justify-content:left;
+        margin: 0;
+        padding-left: 0;
     }
     
     #big-menu li {
@@ -257,3 +305,67 @@ footer p{
     }
 }
 
+
+@media (min-width: 992px) {
+    #wrapper {
+        padding: 0 0;
+        font-size: 18px;
+    }
+    main {
+        margin: 0;
+    }
+    #big-menu {
+        display: block;
+        background-color: #eae3d1;
+        padding: 0;
+    }
+    #big-menu ul {
+        list-style-type: none;
+        border-top: 1px solid #eeeeee;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content:center;
+        margin: 0;
+    }
+    
+    #big-menu li {
+        text-align: center;
+        letter-spacing: 0.1em;
+        border-bottom: none;
+        padding: 0;
+        font-size: 18px;
+    }
+    #big-menu a {
+        margin: 0;
+        color: #0c0c0c;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+     
+    #big-menu li a {
+        width: 120px;
+        padding: 10px;
+    }
+    #big-menu a:hover {
+        text-decoration: underline;
+    }
+    
+    #menubar {
+        display: none;
+    }
+    #small-menu {
+        display: none;
+    }
+
+    .chart-container {
+        width: 440px;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

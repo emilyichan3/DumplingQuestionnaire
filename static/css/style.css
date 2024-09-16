@@ -2,10 +2,6 @@
     --wrap-bg-color: #f3e5e5;
     --nav-bg-color: #eae3d1;
     --main-bg-color: #fff;
-
-
-
-
 }
 * {
     box-sizing: border-box;
@@ -175,6 +171,9 @@ canvas {
     display: none;
 }
 .hide {
+    display: none;
+}
+.hide-totalcount-0 {
     display: none;
 }
 

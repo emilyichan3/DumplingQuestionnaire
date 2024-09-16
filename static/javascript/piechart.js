@@ -39,8 +39,3 @@ if (targetId) {
         }
     });    
 }
-  
-
-// jQuery
-// $(pieChart).appendTo("#pie-1");
-

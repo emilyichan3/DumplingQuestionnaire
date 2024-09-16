@@ -4,13 +4,14 @@
 {% block additional_js %}
      <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+     
 {% endblock %}
 
 {% block main %}
 <!-- dictionary -->
- <div class="flex-chart">
-    {% for answer in answers.values() %}
-    <div>
+<div class="flex-chart">
+{% for answer in answers.values() %}
+    <div class="hide-totalcount-{{ answer.totalcounts }}">
         <ul>
             <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
             <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
@@ -23,6 +24,16 @@
             <script src="/static/javascript/piechart.js"></script>
         </div>
     </div>
-    {% endfor %}
- </div>
+{% endfor %}
+    <form action="{{ url_for('questionnaire') }}" method="GET">
+        <div class="message">
+            <img src="/static/images/dumplings.jpg" alt="success">
+            <h2>There is no questionnaire yet</h2>
+            <p>Please click the button to do questionnaire!</p>
+            <button type="submit" class="btn btn-success">Start</button>
+        </div>
+        <script src="/static/javascript/questionnaire-result.js"></script>
+    </form>
+</div>
+
 {% endblock %}

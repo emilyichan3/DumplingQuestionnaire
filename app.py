@@ -30,28 +30,32 @@ def questionnaire():
 
 @app.route("/questionnaire_result")
 def questionnaire_result():
+    print('total count:' + str(questionnaire_result_datastore["1"].totalcounts))
+    
     return render_template("questionnaire_result.html", answers=questionnaire_result_datastore)
 
+    
 
-@app.route("/questionnaire_per_result/<id>")
-def questionnaire_per_result(id):
-    never_count = questionnaire_result_datastore[id].count['never']
-    sometimes_count = questionnaire_result_datastore[id].count['sometimes']
-    often_count = questionnaire_result_datastore[id].count['often']
-    very_count = questionnaire_result_datastore[id].count['very']
-    almost_count = questionnaire_result_datastore[id].count['almost']
 
-    data = [
-            ('Never', never_count),
-            ('Sometimes', sometimes_count),
-            ('Often', often_count),
-            ('Very', very_count),
-            ('Almost', almost_count)
-        ]
+# @app.route("/questionnaire_per_result/<id>")
+# def questionnaire_per_result(id):
+#     never_count = questionnaire_result_datastore[id].count['never']
+#     sometimes_count = questionnaire_result_datastore[id].count['sometimes']
+#     often_count = questionnaire_result_datastore[id].count['often']
+#     very_count = questionnaire_result_datastore[id].count['very']
+#     almost_count = questionnaire_result_datastore[id].count['almost']
 
-    labels = [row[0] for row in data]
-    values = [row[1] for row in data]
-    return render_template("questionnaire_result.html", answer=questionnaire_result_datastore[id], labels=labels, values=values)
+#     data = [
+#             ('Never', never_count),
+#             ('Sometimes', sometimes_count),
+#             ('Often', often_count),
+#             ('Very', very_count),
+#             ('Almost', almost_count)
+#         ]
+
+#     labels = [row[0] for row in data]
+#     values = [row[1] for row in data]
+#     return render_template("questionnaire_result.html", answer=questionnaire_result_datastore[id], labels=labels, values=values)
 
 
 

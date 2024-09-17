@@ -7,6 +7,14 @@
     <link href="/static/css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="/static/javascript/basic.js"></script>
+    <link rel="icon" type="image/png" href="/static/images/ico/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/ico/favicon-16x16.png">
+    <link rel="manifest" href="/static/images/ico/site.webmanifest">
+    <link rel="mask-icon" href="/static/images/ico/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     {% block additional_js %}
 
     {% endblock %}
@@ -20,9 +28,6 @@
                     <div class="header-content">
                         <h1>Dumplings</h1>
                         <p id="username">{% if session['username'] %} Welcome {{ session['username'] }} {% endif %}</p>
-                        <!-- {% if session['username'] %}
-                                <p id="username">Welcome, {{ session['username'] }}</p>
-                        {% endif %} -->
                     </div>
                     <button type="button" id="menubar" onclick="menuBar()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">

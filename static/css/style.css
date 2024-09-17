@@ -1,6 +1,6 @@
 :root {
-    --wrap-bg-color: #f3e5e5;
-    --nav-bg-color: #eae3d1;
+    --wrap-bg-color: #fff;
+    --nav-bg-color: #f3e5e5;
     --main-bg-color: #fff;
 }
 * {
@@ -260,7 +260,7 @@ footer p{
     }
     #big-menu {
         display: block;
-        background-color: #eae3d1;
+        background-color: var(--nav-bg-color);
         padding: 0;
     }
     #big-menu ul {
@@ -291,7 +291,7 @@ footer p{
     }
      
     #big-menu li a {
-        width: 120px;
+        width: 150px;
         padding: 10px;
     }
     #big-menu a:hover {
@@ -333,7 +333,7 @@ footer p{
     }
     #big-menu {
         display: block;
-        background-color: #eae3d1;
+        background-color: var(--nav-bg-color);
         padding: 0;
     }
     #big-menu ul {
@@ -363,7 +363,7 @@ footer p{
     }
      
     #big-menu li a {
-        width: 120px;
+        width: 150px;
         padding: 10px;
     }
     #big-menu a:hover {

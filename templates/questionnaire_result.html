@@ -25,15 +25,12 @@
         </div>
     </div>
 {% endfor %}
-    <form action="{{ url_for('questionnaire') }}" method="GET">
         <div class="message">
             <img src="/static/images/dumplings.jpg" alt="success">
             <h2>There is no questionnaire yet</h2>
-            <p>Please click the button to do questionnaire!</p>
-            <button type="submit" class="btn btn-success">Start</button>
+            <p>Please click <a href="{{ url_for('questionnaire') }}">here</a> to do questionnaire!</p>
         </div>
         <script src="/static/javascript/questionnaire-result.js"></script>
-    </form>
 </div>
 
 {% endblock %}

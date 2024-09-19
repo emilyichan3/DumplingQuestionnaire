@@ -6,17 +6,18 @@
 {% endblock %}
 
 {% block main %}
-    <h1 >Questionnaire</h1>
+<h1>Questionnaire</h1>
     <div class="question-container">
         <!-- <form id="questionnaireform" action="{{ url_for('questionnaire_submit') }}" method="POST" name="mainform"> -->
             <form id="questionnaireform" method="POST" name="mainform">
             {% for qustion in questions.values() %}
             <div id="question-section-{{ qustion.questionnaire_id }}" class="question-section">
                 <fieldset>
-                    <legend></legend>
-                    <table>
+                    <legend id="error-{{ qustion.questionnaire_id }}" class="error"></legend>
+                    <table class="questionnaire-table">
                         <tbody id="questionnaire-context-list">
                             <tr>
+                                <td rowspan="6"><img src="/static/images/fried_dumplings.jpg" alt="fried_dumplings"></td>
                                 <td><label>{{ qustion.questionnaire_id }}. {{ qustion.question }}</label></td>
                             </tr>
                             <tr>
@@ -61,12 +62,13 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div id="error-{{ qustion.questionnaire_id }}" class="error">
-                    </div>
+                    <!-- <div id="error-{{ qustion.questionnaire_id }}" class="error"></div> -->
                 </fieldset>
             </div>
             {% endfor %}
-            <button class="btn btn-primary" type="submit" name="btnSubmit">Confirm</button>
+            <div class="btn-submit">
+                <button class="btn btn-primary" type="submit" name="btnSubmit">Confirm</button>
+            </div>
         </form>
         <div class="popup">
             <img src="/static/images/dumplings.jpg" alt="success">

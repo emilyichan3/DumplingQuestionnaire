@@ -4,7 +4,7 @@ const QUESTIONS = [
         id: '1',
         question: 'Eat dumplings as starter?',
         options: [
-            { 'name': 'starter', 'value': 'never', 'label': 'Rarely, Almost Never or Never' },
+            { 'name': 'starter', 'value': 'rarely', 'label': 'Rarely' },
             { 'name': 'starter', 'value': 'sometimes', 'label': 'Occasionally or Sometimes' },
             { 'name': 'starter', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'starter', 'value': 'very', 'label': 'Very Frequently' },

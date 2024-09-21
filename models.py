@@ -13,11 +13,11 @@ class Questionnaire_result:
         self.question = question
         self.totalcounts = totalcounts
         self.count = {
-            'never':  0,
-            'sometimes':  0,
-            'often':  0,
-            'very':  0,
-            'almost':  0
+            'Rarely':  0,
+            'Occasionally':  0,
+            'Frequently':  0,
+            'Very Frequently':  0,
+            'Daily':  0
         }
 
     def answer(self, questionnaire_answer):

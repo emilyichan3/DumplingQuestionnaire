@@ -9,7 +9,9 @@ const QUESTIONS = [
             { 'name': 'starter', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'starter', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'starter', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '2',
@@ -20,7 +22,9 @@ const QUESTIONS = [
             { 'name': 'maincourse', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'maincourse', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'maincourse', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '3',
@@ -31,7 +35,9 @@ const QUESTIONS = [
             { 'name': 'sidedish', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'sidedish', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'sidedish', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '4',
@@ -42,7 +48,9 @@ const QUESTIONS = [
             { 'name': 'dessert', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'dessert', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'dessert', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '5',
@@ -53,7 +61,9 @@ const QUESTIONS = [
             { 'name': 'homemade', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'homemade', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'homemade', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '6',
@@ -64,7 +74,9 @@ const QUESTIONS = [
             { 'name': 'shop', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'shop', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'shop', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '7',
@@ -75,7 +87,9 @@ const QUESTIONS = [
             { 'name': 'takeaway', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'takeaway', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'takeaway', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     },
     {
         id: '8',
@@ -86,6 +100,8 @@ const QUESTIONS = [
             { 'name': 'restaurant', 'value': 'often', 'label': 'Often or Frequently' },
             { 'name': 'restaurant', 'value': 'very', 'label': 'Very Frequently' },
             { 'name': 'restaurant', 'value': 'always', 'label': 'Almost Always or Always' }
-        ]
+        ],
+        image_file: 'boiling_dumplings.jpg',
+        image_alt: 'boiling_dumplings'
     }
 ]

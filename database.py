@@ -3,14 +3,14 @@ from models import Questionnaire, Questionnaire_result
 # Default data:
 
 questionnaire_datastore = {
-    '1': Questionnaire("1", "Eat dumplings as starter?", "starter"),
-    '2': Questionnaire('2', "Eat dumplings as main course?", "maincourse"),
-    '3': Questionnaire('3', "Eat dumplings as a side dish?", "sidedish"),
-    '4': Questionnaire('4', "Eat dumplings as dessert?", "dessert"),
-    '5': Questionnaire('5', "Have you do homemade dumplings?", "homemade"),
-    '6': Questionnaire('6', "Have you bought frozen dumplings from the shop?", "froze"),
-    '7': Questionnaire('7', "Have you ordered take away dumplings?", "takeaway"),
-    '8': Questionnaire('8', "Have you had dumplings in the restaurant?", "restaurant")
+    '1': Questionnaire("1", "Eat dumplings as starter?", "starter", "fried_dumplings.jpg", "fried_dumplings" ),
+    '2': Questionnaire('2', "Eat dumplings as main course?", "maincourse", "Indian_dumplings.jpg", "Indian_dumplings" ),
+    '3': Questionnaire('3', "Eat dumplings as a side dish?", "sidedish", "Italian_dumplings.jpg", "Italian_dumplings" ),
+    '4': Questionnaire('4', "Eat dumplings as dessert?", "dessert", "Polish_dumplings.jpg", "Polish_dumplings" ),
+    '5': Questionnaire('5', "Have you do homemade dumplings?", "homemade", "Knodel_dumplings.jpg", "Knodel_dumplings" ),
+    '6': Questionnaire('6', "Have you bought frozen dumplings from the shop?", "froze", "Pelmen_dumplings.jpg", "Pelmen_dumplings" ),
+    '7': Questionnaire('7', "Have you ordered take away dumplings?", "takeaway", "Empanadas_dumplings.jpg", "Empanadas_dumplings" ),
+    '8': Questionnaire('8', "Have you had dumplings in the restaurant?", "restaurant", "boiling_dumplings.jpg", "boiling_dumplings" )
 }
 
 questionnaire_result_datastore = {

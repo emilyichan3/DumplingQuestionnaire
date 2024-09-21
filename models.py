@@ -1,8 +1,10 @@
 class Questionnaire:
-    def __init__(self, questionnaire_id, question, group_name):
+    def __init__(self, questionnaire_id, question, group_name, image_name, image_alt):
         self.questionnaire_id = questionnaire_id
         self.question = question
         self.group_name = group_name
+        self.image_name = image_name
+        self.image_alt = image_alt
 
 
 class Questionnaire_result:

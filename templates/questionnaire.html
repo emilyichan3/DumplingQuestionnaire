@@ -17,8 +17,8 @@
                     <table class="questionnaire-table">
                         <tbody id="questionnaire-context-list">
                             <tr>
-                                <td rowspan="6"><img src="/static/images/fried_dumplings.jpg" alt="fried_dumplings"></td>
-                                <td><label>{{ qustion.questionnaire_id }}. {{ qustion.question }}</label></td>
+                                <td rowspan="6"><img src="/static/images/{{ qustion.image_name }}" alt="{{ qustion.image_alt }}"></td>
+                                <td class="questionnaire-right"><label>{{ qustion.questionnaire_id }}. {{ qustion.question }}</label></td>
                             </tr>
                             <tr>
                                 <td>

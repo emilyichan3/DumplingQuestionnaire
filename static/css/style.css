@@ -21,9 +21,6 @@ body{
     margin: 0;
     background-color: var(--wrap-bg-color);
 }
-.main-content {
-    padding: 0;
-}
 
 .header-container {
     width: 100%;
@@ -101,6 +98,7 @@ header{
     padding: 0;
     font-size: 18px;
 }
+
 #menu-list a {
     color: #0c0c0c;
     text-decoration: none;
@@ -111,7 +109,13 @@ header{
 #menu-list a:hover {
     text-decoration: underline;
 }
-
+.main-content {
+    padding: 0;   
+    border-top: 1px solid #0f0c0d;
+}
+.main-content-border-control {
+    border-top: none;
+}
 .page-active{
     font-weight: bold;
 }
@@ -119,7 +123,7 @@ header{
 main {
     color: #111111;
     margin: 0 auto;
-    padding: 0.5em 0.5em 1em 0.5em;
+    padding: 1em 0.5em;
     background-color: var(--main-bg-color);
 }
 
@@ -182,6 +186,7 @@ canvas {
 #questionnaireform .btn-submit {
     display: grid;
     justify-content: left;
+    margin-top: 5px;
 }
 
 .question-section.success fieldset {
@@ -313,6 +318,10 @@ canvas {
     main {
         margin: 0;
     }
+    .main-content {
+        border-top: none;
+    }
+    
     #big-menu {
         display: block;
         background-color: var(--nav-bg-color);
@@ -391,6 +400,7 @@ canvas {
     #questionnaireform .btn-submit {
         display: grid;
         justify-content: center;
+        margin-top: 5px;
     }
     h1 {
         display: grid;
@@ -429,6 +439,7 @@ canvas {
     }
     .main-content {
         padding: 0 5%;
+        border-top: none;
     }
     #big-menu {
         display: block;
@@ -477,10 +488,10 @@ canvas {
     }
     .questionnaire-table img {
         display: block;
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
         float: right;
-        padding-right: 50px;
+        padding-right: 10px;
     }
     .questionnaire-table td {
         width: 445px;
@@ -493,6 +504,7 @@ canvas {
     #questionnaireform .btn-submit {
         display: grid;
         justify-content: center;
+        margin-top: 5px;
     }
     h1 {
         display: grid;

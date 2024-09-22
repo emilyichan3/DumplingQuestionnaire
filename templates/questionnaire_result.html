@@ -4,32 +4,32 @@
 {% block additional_js %}
      <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-     
 {% endblock %}
 
 {% block main %}
 <!-- dictionary -->
-<div class="flex-chart">
-{% for answer in answers.values() %}
-    <div class="hide-totalcount-{{ answer.totalcounts }}">
-        <ul>
-            <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
-            <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
-            <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
-            <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
-        </ul>
-        <div class="chart-container">
-            <p class="hide-id">{{ answer.questionnaire_id }}</p>
-            <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>
-            <script src="/static/javascript/piechart.js"></script>
+<div class="display-center">
+    <div class="flex-chart">
+        {% for answer in answers.values() %}
+            <div class="hide-totalcount-{{ answer.totalcounts }}">
+                <ul>
+                    <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
+                    <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
+                    <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
+                    <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
+                </ul>
+                <div class="chart-container">
+                    <p class="hide-id">{{ answer.questionnaire_id }}</p>
+                    <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>
+                    <script src="/static/javascript/piechart.js"></script>
+                </div>
+            </div>
+        {% endfor %}
+                <div class="message">
+                    <h2>There is no questionnaire yet</h2>
+                    <p>Please click <a href="{{ url_for('questionnaire') }}">here</a> to do questionnaire!</p>
+                </div>
+                <script src="/static/javascript/questionnaire-result.js"></script>
         </div>
-    </div>
-{% endfor %}
-        <div class="message">
-            <h2>There is no questionnaire yet</h2>
-            <p>Please click <a href="{{ url_for('questionnaire') }}">here</a> to do questionnaire!</p>
-        </div>
-        <script src="/static/javascript/questionnaire-result.js"></script>
 </div>
-
 {% endblock %}

@@ -133,6 +133,25 @@ main {
     background-color: var(--main-bg-color);
 }
 
+footer {
+    bottom: 0;
+    background-color: #545151;
+    color: #ffffff;
+    font-size: 80%;
+    text-align: center;
+    padding: 0;
+}
+
+footer a{
+    color: #FFFF00;
+}
+footer p{
+    padding: 0;
+    margin: 0;
+    line-height: 150%;
+}
+
+
 form {
     margin-bottom:10px;
 }
@@ -249,23 +268,14 @@ canvas {
     padding: 10px;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
 }
-
-footer {
-    bottom: 0;
-    background-color: #545151;
-    color: #ffffff;
-    font-size: 80%;
-    text-align: center;
-    padding: 0;
+/* login page layout */
+.input-layout form{
+    width: 100%;
+    display:grid;
+    justify-content: left;
 }
-
-footer a{
-    color: #FFFF00;
-}
-footer p{
-    padding: 0;
-    margin: 0;
-    line-height: 150%;
+.input-layout input{
+    margin-bottom: 10px;
 }
 
 @media (min-width: 650px) {
@@ -346,7 +356,7 @@ footer p{
         font-weight: bold;
         width: 500px;
     }
-    form {
+    #questionnaireform {
         width: 100%;
         display:grid;
         justify-self: stretch;
@@ -359,13 +369,15 @@ footer p{
         display: grid;
         justify-content: left;
     }
+    .input-layout form{
+        width: 100%;
+        display:grid;
+        justify-content: left;
+    }
+
     .chart-container {
         width: 440px;
         height: 300px;
-        /* background-color: #ffffff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px; */
         display: flex;
         justify-content: center;
         align-items: center;
@@ -440,11 +452,10 @@ footer p{
     .questionnaire-table td {
         width: 445px;
     }
-    form {
+    #questionnaireform {
         width: 100%;
         display:grid;
         justify-content: center;
-
     }
     #questionnaireform .btn-submit {
         display: grid;
@@ -454,7 +465,11 @@ footer p{
         display: grid;
         justify-content: center;
     }
-    
+    .input-layout form{
+        width: 100%;
+        display:grid;
+        justify-content: center;
+    }
     .chart-container {
         width: 440px;
         height: 300px;

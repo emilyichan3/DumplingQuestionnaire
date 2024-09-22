@@ -3,14 +3,14 @@ from models import Questionnaire, Questionnaire_result
 # Default data:
 
 questionnaire_datastore = {
-    '1': Questionnaire("1", "Do you eat dumplings as a starter?", "starter", "fried_dumplings.jpg", "fried_dumplings" ),
-    '2': Questionnaire('2', "Do you eat dumplings as a main course?", "maincourse", "Indian_dumplings.jpg", "Indian_dumplings" ),
-    '3': Questionnaire('3', "Do you eat dumplings as a side dish?", "sidedish", "steaming_dumplings.jpg", "steaming_dumplings" ),
-    '4': Questionnaire('4', "Do you eat dumplings as a dessert?", "dessert", "Polish_dumplings.jpg", "Polish_dumplings" ),
-    '5': Questionnaire('5', "Do you make homemade dumplings?", "homemade", "Knodel_dumplings.jpg", "Knodel_dumplings" ),
-    '6': Questionnaire('6', "Do you buy frozen dumplings from the shop?", "froze", "Pelmen_dumplings.jpg", "Pelmen_dumplings" ),
-    '7': Questionnaire('7', "Do you eat take away dumplings?", "takeaway", "Empanadas_dumplings.jpg", "Empanadas_dumplings" ),
-    '8': Questionnaire('8', "Do you eat dumplings in restaurants?", "restaurant", "boiling_dumplings.jpg", "boiling_dumplings" )
+    '1': Questionnaire("1", "Do you eat dumplings as a starter?", "starter", "making_process_01.jpg", "Making dumpling process-step 1" ),
+    '2': Questionnaire('2', "Do you eat dumplings as a main course?", "maincourse", "making_process_02.jpg", "Making dumpling process-step 2" ),
+    '3': Questionnaire('3', "Do you eat dumplings as a side dish?", "sidedish", "making_process_03.jpg", "Making dumpling process-step 3" ),
+    '4': Questionnaire('4', "Do you eat dumplings as a dessert?", "dessert", "making_process_04.jpg", "Making dumpling process-step 4" ),
+    '5': Questionnaire('5', "Do you make homemade dumplings?", "homemade", "making_process_05.jpg", "Making dumpling process-step 5" ),
+    '6': Questionnaire('6', "Do you buy frozen dumplings from the shop?", "froze", "making_process_06.jpg", "Making dumpling process-step 6" ),
+    '7': Questionnaire('7', "Do you eat take away dumplings?", "takeaway", "making_process_07.jpg", "Making dumpling process-step 7" ),
+    '8': Questionnaire('8', "Do you eat dumplings in restaurants?", "restaurant", "making_process_08.jpg", "Making dumpling process-step 8" )
 }
 
 questionnaire_result_datastore = {

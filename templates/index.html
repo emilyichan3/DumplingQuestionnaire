@@ -2,69 +2,77 @@
 {% set active_page = "index" %}
 
 {% block main %}
-    <div class="main-content-image">
-        <img src="/static/images/fried_dumplings.jpg" alt="fried_dumplings">
-        <h2>What Dumplings</h2>
-    </div>
-    <div>
+    <h2>What Dumplings</h2>
+    <div class="display-block">
         <p>
             A dumpling is a broad term used to describe small pieces of dough, often filled with a variety of ingredients, and cooked in several different ways. Dumplings can be savory or sweet and are a staple in many cuisines around the world. The dough used for dumplings can be made from flour, potatoes, or other starches, and they can be boiled, steamed, fried, or baked. Here’s a closer look at different types of dumplings:
         </p>
-        <div>
-            <h4>Types of Dumplings:</h4>
-            <dl>
-                <dt>Chinese Dumplings (Jiaozi):</dt>
-                <dd>Potstickers (Guo Tie): Pan-fried on one side and steamed on the other, giving them a crispy bottom.</dd>
-                <dd>Boiled Dumplings (Shuijiao): These are boiled and usually served with a dipping sauce.</dd>
-                <dd>Soup Dumplings (Xiaolongbao): Steamed dumplings filled with broth and meat, usually pork.</dd>
+    </div>
+    <div class="display-block">
+        <h4>Types of Dumplings:</h4>
+        <div class="DumplingList">
+            <dl class="item">
+                <dt>Chinese Dumplings (Jiaozi)</dt>
+                <dd><img src="/static/images/steaming_dumplings.jpg" alt="steaming_dumplings"></dd>
+                <dd>Filled with ingredients like pork, beef or vegetables, and can be steamed, boiled or fried.</dd>
             </dl>
-            <dl>
-                <dt>Japanese Dumplings (Gyoza):</dt>
-                <dd>imilar to Chinese potstickers but usually thinner and with a more garlicky flavor.</dd>
+            <dl class="item">
+                <dt>Japanese Dumplings (Gyoza)</dt>
+                <dd><img src="/static/images/fried_dumplings.jpg" alt="fried_dumplings"></dd>
+                <dd>Similar to Chinese potstickers but usually thinner and with a more garlicky flavor.</dd>
             </dl>
-            <dl>
-                <dt>Korean Dumplings (Mandu):</dt>
+            <dl class="item">
+                <dt>Korean Dumplings (Mandu)</dt>
+                <dd><img src="/static/images/boiling_dumplings.jpg" alt="boiling_dumplings"></dd>
                 <dd>Can be steamed, boiled, or fried, and are often filled with a mix of meat, vegetables, and tofu.</dd>
             </dl>
-            <dl>
-                <dt>Polish Dumplings (Pierogi):</dt>
+            <dl class="item">
+                <dt>Polish Dumplings (Pierogi)</dt>
+                <dd><img src="/static/images/Polish_dumplings.jpg" alt="Polish_dumplings"></dd>
                 <dd>Filled with ingredients like mashed potatoes, cheese, sauerkraut, or fruit, and can be boiled or fried.</dd>
             </dl>
-            <dl>
-                <dt>Indian Dumplings (Momos):</dt>
+            <dl class="item">
+                <dt>Indian Dumplings (Momos)</dt>
+                <dd><img src="/static/images/Indian_dumplings.jpg" alt="Indian_dumplings"></dd>
                 <dd>Steamed or fried dumplings filled with spiced meat or vegetables, popular in regions like Nepal and Tibet as well.</dd>
             </dl>
-            <dl>
-                <dt>Central and Eastern European Dumplings:</dt>
-                <dd>Knödel: German bread or potato dumplings, often served as a side dish.</dd>
-                <dd>Pelmeni: Russian dumplings usually filled with meat and served in broth or with sour cream.</dd>
+            <dl class="item">
+                <dt>Central European Dumplings (Knödel)</dt>
+                <dd><img src="/static/images/Knodel_dumplings.jpg" alt="Knodel_dumplings"></dd>
+                <dd>German bread or potato dumplings, often served as a side dish.</dd>
             </dl>
-            <dl>
-                <dt>Latin American Dumplings:</dt>
-                <dd>Empanadas: Though often baked or fried, empanadas can be considered a type of dumpling, with fillings ranging from meat to sweet fillings like fruit.</dd>
+            <dl class="item">
+                <dt>Eastern European Dumplings (Pelmeni)</dt>
+                <dd><img src="/static/images/Pelmen_dumplings.jpg" alt="Pelmen_dumplings"></dd>
+                <dd>Russian dumplings usually filled with meat and served in broth or with sour cream.</dd>
             </dl>
-        </div>
-        <div>
-            <h4>Common Dumpling Preparation Methods:</h4>
-            <dl>
-                <dt>Boiling</dt>
-                <dd>Dumplings are cooked in boiling water or broth until they float to the top, which indicates they are done.</dd>
-            </dl>
-            <dl>
-                <dt>Steaming</dt>
-                <dd>Dumplings are placed in a steamer basket and cooked with steam, often preserving their juiciness.</dd>
-            </dl>
-            <dl>
-                <dt>Frying</dt>
-                <dd>Dumplings are pan-fried or deep-fried for a crispy exterior.</dd>
-            </dl>
-            <dl>
-                <dt>Baking</dt>
-                <dd>Some dumplings are baked in an oven, often in a sauce or with a topping.</dd>
+            <dl class="item">
+                <dt>Latin American Dumplings (Empanadas)</dt>
+                <dd><img src="/static/images/Empanadas_dumplings.jpg" alt="Empanadas_dumplings"></dd>
+                <dd>Though often baked or fried, empanadas can be considered a type of dumpling, with fillings ranging from meat to sweet fillings like fruit.</dd>
             </dl>
         </div>
-        <div>
-            <p>Dumplings are versatile, comforting, and can be enjoyed as a snack, appetizer, or main course. They have a rich history in many cultures, each offering its own unique twist on this delicious dish.</p>
-        </div>
+    </div>
+    <div class="display-block">
+        <h4>Common Dumpling Preparation Methods:</h4>
+        <dl>
+            <dt>Boiling</dt>
+            <dd>Dumplings are cooked in boiling water or broth until they float to the top, which indicates they are done.</dd>
+        </dl>
+        <dl>
+            <dt>Steaming</dt>
+            <dd>Dumplings are placed in a steamer basket and cooked with steam, often preserving their juiciness.</dd>
+        </dl>
+        <dl>
+            <dt>Frying</dt>
+            <dd>Dumplings are pan-fried or deep-fried for a crispy exterior.</dd>
+        </dl>
+        <dl>
+            <dt>Baking</dt>
+            <dd>Some dumplings are baked in an oven, often in a sauce or with a topping.</dd>
+        </dl>
+    </div>
+    <div class="display-block">
+        <p>Dumplings are versatile, comforting, and can be enjoyed as a snack, appetizer, or main course. They have a rich history in many cultures, each offering its own unique twist on this delicious dish.</p>
     </div>
 {% endblock %}

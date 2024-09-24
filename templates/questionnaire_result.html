@@ -13,7 +13,7 @@
         {% for answer in answers.values() %}
             <div class="hide-totalcount-{{ answer.totalcounts }}">
                 <ul>
-                    <li id="question-{{ answer.questionnaire_id }}" class="hide">Questionnaire: {{ answer.question }}</li>
+                    <li id="question-{{ answer.questionnaire_id }}" class="hide">{{ answer.question }}</li>
                     <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
                     <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
                     <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
@@ -25,11 +25,11 @@
                 </div>
             </div>
         {% endfor %}
-                <div class="message">
-                    <h2>There is no questionnaire yet</h2>
-                    <p>Please click <a href="{{ url_for('questionnaire') }}">here</a> to do questionnaire!</p>
-                </div>
-                <script src="/static/javascript/questionnaire-result.js"></script>
+        <div class="message">
+            <h2>There is no questionnaire yet</h2>
+            <p>Please click <a href="{{ url_for('questionnaire') }}">here</a> to do questionnaire!</p>
         </div>
+        <script src="/static/javascript/questionnaire-result.js"></script>
+    </div>
 </div>
 {% endblock %}

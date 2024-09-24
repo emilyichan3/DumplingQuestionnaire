@@ -26,6 +26,17 @@ body{
     width: 100%;
 }
 
+.container img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+.header-content {
+    height: 70px;
+    margin: 10px;
+}
+
 .top-navigation {
     width: 100%;
     margin: 0;
@@ -48,7 +59,6 @@ header{
     letter-spacing: 0.1em;
     font-weight: bold;
 }
-
 #username {
     margin: 0;
     padding: 0;
@@ -215,12 +225,13 @@ canvas {
     justify-content: left;
 }
 
+
 .flex-chart{
     display: flex;
     flex-flow: row wrap;
     width: 100%;
     margin: 0;
-    align-items: left;
+    justify-content:left;
 }
 
 .popup {
@@ -411,7 +422,9 @@ canvas {
         display:grid;
         justify-content: left;
     }
-
+    .flex-chart{
+        justify-content:left;
+    }
     .chart-container {
         width: 440px;
         height: 300px;
@@ -515,6 +528,9 @@ canvas {
         display:grid;
         justify-content: center;
     }
+    .flex-chart{
+        justify-content:space-evenly;
+    }
     .chart-container {
         width: 440px;
         height: 300px;
@@ -529,6 +545,9 @@ canvas {
     }
     .DumplingList .item{
         width: 33%;
-        /* height: 570px; */
+    }
+    .display-center {
+        display: grid;
+        justify-content: center;
     }
 }

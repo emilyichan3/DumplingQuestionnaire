@@ -23,7 +23,7 @@ if (targetId) {
             // labels: ['never', 'sometimes', 'often', 'very', 'almost'],
             labels: keys.slice(1,-1).replaceAll("'","").split(",").map(toTrimString),
             datasets: [{
-                textinfo: "label+percent",
+                textinfo: "labels+percent",
                 backgroundColor: barColors,
                 data: values.slice(1,-1).replaceAll("'","").split(",").map(toInteger),
             }]

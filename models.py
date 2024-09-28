@@ -22,5 +22,6 @@ class Questionnaire_result:
 
     def answer(self, questionnaire_answer):
         self.count[questionnaire_answer] +=1
-        self.totalcounts += 1
+        self.totalcounts +=1
+
 

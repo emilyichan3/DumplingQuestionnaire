@@ -21,7 +21,7 @@
                 <div class="chart-container">
                     <p class="hide-id">{{ answer.questionnaire_id }}</p>
                     <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>
-                    <script src="/static/javascript/piechart.js"></script>
+                    <script src="/static/js/script_piechart.js"></script>
                 </div>
             </div>
         {% endfor %}
@@ -29,7 +29,7 @@
             <h2>There is no questionnaire yet</h2>
             <p>Please click <a href="{{ url_for('questionnaire') }}">here</a> to do questionnaire!</p>
         </div>
-        <script src="/static/javascript/questionnaire-result.js"></script>
+        <script src="/static/js/script_questionnaire_result.js"></script>
     </div>
 </div>
 {% endblock %}

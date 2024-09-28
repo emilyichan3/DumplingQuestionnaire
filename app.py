@@ -30,7 +30,7 @@ def questionnaire():
 
 @app.route("/questionnaire_result")
 def questionnaire_result():
-    print('total count:' + str(questionnaire_result_datastore["1"].totalcounts))
+    print('total count:' + str(starter_result.totalcounts))
     
     return render_template("questionnaire_result.html", answers=questionnaire_result_datastore)
 

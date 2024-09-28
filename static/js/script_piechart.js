@@ -19,11 +19,12 @@ if (targetId) {
     
     var pieChart = new Chart(ctx, {
         type: "pie",
+
         data: {
             // labels: ['never', 'sometimes', 'often', 'very', 'almost'],
             labels: keys.slice(1,-1).replaceAll("'","").split(",").map(toTrimString),
             datasets: [{
-                textinfo: "labels+percent",
+                textinfo: "label+percent",
                 backgroundColor: barColors,
                 data: values.slice(1,-1).replaceAll("'","").split(",").map(toInteger),
             }]

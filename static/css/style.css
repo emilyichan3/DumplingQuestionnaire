@@ -413,7 +413,7 @@ canvas {
         justify-content: center;
         margin-top: 5px;
     }
-    h1 {
+    .display-layout h1 {
         display: grid;
         justify-content: left;
     }
@@ -519,7 +519,7 @@ canvas {
         justify-content: center;
         margin-top: 5px;
     }
-    h1 {
+    .display-layout h1 {
         display: grid;
         justify-content: center;
     }

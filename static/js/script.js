@@ -14,4 +14,4 @@ function menuBar() {
     
     mainContent = document.getElementById("main-content");
     mainContent.classList.toggle('main-content-border-control')
-  }
+}

@@ -1,13 +1,13 @@
-
+// this js is for the page of questionnaire_result and in charge of pie chart.
 function toTrimString(s) {
     return s.trim();
 }
 function toInteger(s) {
     return parseInt(s.trim())
 }
-var allIds = document.getElementsByClassName('hide-id');
 
-//using allIds.length to know how many question been shown
+//using allIds.length to know how many questions been shown, so it can be hided by css if no question be shown
+var allIds = document.getElementsByClassName('hide-id');
 var targetId = allIds.length;
 var target = 'pie-' + targetId;
 
@@ -21,7 +21,7 @@ if (targetId) {
         type: "pie",
 
         data: {
-            // labels: ['never', 'sometimes', 'often', 'very', 'almost'],
+            // sample of labels: ['never', 'sometimes', 'often', 'very', 'almost'],
             labels: keys.slice(1,-1).replaceAll("'","").split(",").map(toTrimString),
             datasets: [{
                 textinfo: "label+percent",

@@ -13,6 +13,7 @@
         {% for answer in answers.values() %}
             <div class="hide-totalcount-{{ answer.totalcounts }}">
                 <ul>
+                    <!-- below li is hided as those values is for getting value in javascript -->
                     <li id="question-{{ answer.questionnaire_id }}" class="hide">{{ answer.question }}</li>
                     <li id="id-{{ answer.questionnaire_id }}" class="hide">{{ answer.questionnaire_id }}</li>
                     <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>

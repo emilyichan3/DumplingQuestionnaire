@@ -29,12 +29,9 @@ def questionnaire():
 
 
 @app.route("/questionnaire_result")
-def questionnaire_result():
-    print('total count:' + str(starter_result.totalcounts))
-    
+def questionnaire_result():   
     return render_template("questionnaire_result.html", answers=questionnaire_result_datastore)
 
-    
 
 @app.route("/questionnaire_submit", methods=["POST"])
 def questionnaire_submit():
@@ -49,6 +46,7 @@ def questionnaire_submit():
     takeaway = request.form["takeaway"]
     restaurant = request.form["restaurant"]
 
+    # Store the answer to each question
     starter_result.answer(starter)
     maincourse_result.answer(maincourse)
     sidedish_result.answer(sidedish)
@@ -58,10 +56,12 @@ def questionnaire_submit():
     takeaway_result.answer(takeaway)
     restaurant_result.answer(restaurant)
 
-    # Redirect to the questionnaire page.
+ 
     if 'username' in session:
+        # Redirect to the questionnaire result page if user login.
         return redirect(url_for("questionnaire_result"))
     else:
+        # Redirect to the questionnaire page if no user login.
         return redirect(url_for("questionnaire"))
     
 
@@ -69,7 +69,6 @@ def questionnaire_submit():
 @app.route('/login', methods=['GET'])
 def login():
     """Login page for the app.
-
     If the user is not logged in, display the login form.
     """
     # If the user is already logged in, redirect back to the home page.

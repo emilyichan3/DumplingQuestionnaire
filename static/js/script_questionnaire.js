@@ -1,3 +1,4 @@
+// this js code is for the page of questionnaire
 const errorMessage = '*Requested';
 
 const setError = (element, message) => {
@@ -66,6 +67,7 @@ function init(){
             errors.push('question-section-8');
         };
 
+        // scroll up to the first error section
         if (Array.isArray(errors) && errors.length > 0){
             const firstError = errors[0];
             console.log(`first error: ${firstError}`);
@@ -73,18 +75,19 @@ function init(){
             element.scrollIntoView({ behavior: "smooth", block: "center" });
         } else {
             popup.classList.add('poppedup');
-            // form.submit();
         } 
     })   
 }
 
 function validateInputs(radioGroup, sectionName) {
+    // validate answers for each question. 
     let question_id = sectionName
     let question_validate = false;
 
     console.log(`step ${question_id}`);
 
     for(var i=0; i<radioGroup.length;i++){
+        // added success class if the question be answered.
         if(radioGroup[i].checked){
             setSuccess(question_id);
             return true;
@@ -92,12 +95,14 @@ function validateInputs(radioGroup, sectionName) {
     }
 
     if(!question_validate){
+        // added error class if the question not be answered.
         setError(question_id, errorMessage);
         return false;
     }
 }
 
 function popupClose() {
+    // using popup message to submit the form
     const form = document.getElementById('questionnaireform');
     const popup = document.querySelector('.popup');
     popup.classList.remove('poppedup');

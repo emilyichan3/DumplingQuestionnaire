@@ -1,7 +1,6 @@
 from models import Questionnaire, Questionnaire_result
 
 # Default data:
-
 questionnaire_datastore = {
     '1': Questionnaire("1", "Do you eat dumplings as a starter?", "starter", "making_process_01.jpg", "Making dumpling process-step 1" ),
     '2': Questionnaire('2', "Do you eat dumplings as a main course?", "maincourse", "making_process_02.jpg", "Making dumpling process-step 2" ),

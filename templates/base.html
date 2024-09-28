@@ -21,7 +21,7 @@
                     <img src="/static/images/dumpling.png" alt="Dumpling">
                     <div class="header-content">
                         <h1>Dumplings</h1>
-                        <p id="username">{% if session['username'] %} Welcome {{ session['username'] }} {% endif %}</p>
+                        <p id="username">{% if session['username'] %} Welcome {{ session['username'] }} {% else %} Please login to display the result {% endif %}</p>
                     </div>
                     <button type="button" id="menubar" onclick="menuBar()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">

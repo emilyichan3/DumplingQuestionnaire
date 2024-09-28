@@ -19,6 +19,16 @@
                     <li id="keys-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.keys() | list }}</li>
                     <li id="values-{{ answer.questionnaire_id }}" class="hide">{{ answer.count.values() | list }}</li>
                 </ul>
+                <div class="answer-list">
+                    <h5>{{ answer.questionnaire_id }}. {{ answer.question }}</h5>
+                    <ul>
+                        <li class="color-rarely">Rarely : {{ answer.count["Rarely"] }}</li>
+                        <li class="color-occasionally">Occasionally : {{ answer.count["Occasionally"] }}</li>
+                        <li class="color-frequently">Frequently : {{ answer.count["Frequently"] }}</li>
+                        <li class="color-very-frequently">Very Frequently : {{ answer.count["Very Frequently"] }}</li>
+                        <li class="color-daily">On a Daily Basis: {{ answer.count["Daily"] }}</li>
+                    </ul>
+                </div>
                 <div class="chart-container">
                     <p class="hide-id">{{ answer.questionnaire_id }}</p>
                     <canvas id="pie-{{ answer.questionnaire_id }}"></canvas>

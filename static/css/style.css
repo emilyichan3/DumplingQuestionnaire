@@ -233,7 +233,34 @@ canvas {
     margin: 0;
     justify-content:left;
 }
-
+.answer-list ul{
+    list-style-type:circle;
+}
+.answer-list {
+    padding-left: 70px;
+    text-align: left;
+    width: 440px;
+}
+.color-rarely {
+    color: #b91d47;
+    font-weight: bold;
+}
+.color-occasionally {
+    color: #00aba9;
+    font-weight: bold;
+}
+.color-frequently  {
+    color: #2b5797;
+    font-weight: bold;
+}
+.color-very-frequently  {
+    color: #f13f0d;
+    font-weight: bold;
+}
+.color-daily  {
+    color: #095c30;
+    font-weight: bold;
+}
 .popup {
     width: 400px;
     position: fixed;

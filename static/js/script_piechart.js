@@ -33,7 +33,7 @@ if (targetId) {
             responsive: false,
             plugins: {
                 title: {
-                display: true,
+                display: false,
                 text: question
                 }
             }

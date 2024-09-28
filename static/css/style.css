@@ -237,7 +237,7 @@ canvas {
     list-style-type:circle;
 }
 .answer-list {
-    padding-left: 70px;
+    padding-left: 0;
     text-align: left;
     width: 440px;
 }
@@ -460,6 +460,11 @@ canvas {
         align-items: center;
         flex-direction: column;
     }
+    .answer-list {
+        padding-left: 70px;
+        text-align: left;
+        width: 440px;
+    }
     .DumplingList .item{
         width: 50%;
     }
@@ -565,6 +570,11 @@ canvas {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .answer-list {
+        padding-left: 70px;
+        text-align: left;
+        width: 440px;
     }
     .DumplingList dt {
         height: 72px;

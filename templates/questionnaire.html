@@ -6,7 +6,8 @@
 {% endblock %}
 
 {% block main %}
-<h1>Questionnaire</h1>
+<div class="display-layout">
+    <h1>Questionnaire</h1>
     <div class="question-container">
         <!-- <form id="questionnaireform" action="{{ url_for('questionnaire_submit') }}" method="POST" name="mainform"> -->
             <form id="questionnaireform" method="POST" name="mainform">
@@ -77,4 +78,5 @@
             <button type="button" class="btn btn-success" onclick="popupClose()">Submit</button>
         </div>
     </div>
+</div>
 {% endblock %}
